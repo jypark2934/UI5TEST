@@ -1,0 +1,42 @@
+<mvc:View controllerName="sap.sync.ui5test.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page id="page" title="계산기">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <Title text="Ex01" level="H1" class="sapUiTinyMargin"/>
+                <VBox>
+                    <HBox>
+                        <VBox height="4rem" justifyContent="End" class="sapUiTinyMargin">
+                            <Label text="첫번째 숫자" labelFor="inputOne"/>
+                            <Input id="input1" value="{path: 'view>/value1', type: 'sap.ui.model.type.Float'}" 
+                                    required="true" submit="onSubmit"/>
+                        </VBox>
+                        <VBox height="4rem" justifyContent="End" class="sapUiTinyMargin">
+                            <Label text="연산자" labelFor="inputOperator"/>
+                            <Select width="100%"
+                                    id="selectOp" change="onSelect"
+						            items="{selList>/calc/operate}"
+						            selectedKey="{view>/sSelValue}">
+						        <core:Item key="{selList>ope}" text="{selList>id}"/>
+					        </Select>
+                        </VBox>
+                        <VBox height="4rem" justifyContent="End" class="sapUiTinyMargin">
+                            <Label text="두번째 숫자" labelFor="inputTwo"/>
+                            <Input id="input2" value="{path: 'view>/value2', type: 'sap.ui.model.type.Float' }" 
+                                    required="true" submit="onSubmit"/>
+                        </VBox>
+                        <VBox height="4rem" justifyContent="End" class="sapUiTinyMargin">
+                            <Button text="계산" press="onCalc"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+                <VBox>
+                    <Title text="결과" level="H2" class="sapUiTinyMargin"/>
+                    <Text id="text1" text="{view>/result}" class="sapUiTinyMargin"/>
+                </VBox>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,23 @@
+<mvc:View controllerName="sap.sync.ui5test.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="JavaScript 활용">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <Title text="Ex02" level="H1" class="sapUiTinyMargin"/>
+                <HBox>
+                    <VBox>
+                        <Label text="마스킹 변환 대상 문자열 - 한국식 이름의 성 을 제외한 이름 부분을 ** 형태로 변경 ex)이**" />
+                        <HBox>
+                            <Input value="이사람" id="input1" />
+                            <!-- 입력 : value 속성은 자유롭게 변경 가능, 초기 예시를 위해 넣어놓은 것 뿐임 -->
+                            <Button text="변환" press="onChangeText"/>
+                            <Input value="이**" id="input2" class="sapUiSmallMarginBegin" editable="false"/>
+                            <!-- 결과 : value 속성은 자유롭게 변경 가능, 초기 예시를 위해 넣어놓은 것 뿐임 -->
+                        </HBox>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

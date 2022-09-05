@@ -1,0 +1,20 @@
+<mvc:View controllerName="sap.sync.ui5test.controller.View4"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="dataBinding 활용">
+        <content>
+            <VBox>
+                <!--
+                    1. m.Table 추가 - ("oViewFourModel" 모델의 "materialList")
+                        code 코드명 / materialName 자재명 /  manufacturer 생산업체 / qualified 품질검사여부 / 
+                        createdDate 생산일자 / quantity 재고량 / unit 단위 / warehouse 창고
+                    2. sort 기능 추가 (0. 자재명 기준 1. 버튼으로만 동작 2. 처음 누르면 오름차순, 다시 누르면 내림차순, *세번째 누르면 정렬 해제)
+                    3. sort viewSettingDialog 추가 (sort 기능만 / 자재명, 품질검사여부, 생산일자 세가지 옵션 제공)
+                      (참고) https://sapui5.hana.ondemand.com/sdk/#/entity/sap.m.ViewSettingsDialog/sample/sap.m.sample.TableViewSettingsDialog
+                    4. filter 기능 추가 (0. 자재명 기준 1. sap.m.Input / sap.m.Button 두가지 활용해서 구현)
+                    5. filter 검색창 다중검색 추가 (Filter를 여러개 합치면 Or 조건!) 4. 에서 추가한 인풋창에서 자재명, 생산업체, 코드명 세가지 필드를 검색 가능하도록 기능 추가
+                -->
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

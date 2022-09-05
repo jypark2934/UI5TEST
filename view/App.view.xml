@@ -1,0 +1,13 @@
+<mvc:View controllerName="sap.sync.ui5test.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <HBox class="sapUiTinyMarginBegin">
+        <Button text="1" press="onNavToPage('1')" tooltip="JavaScript 활용 1" type="{= ${AppModel>/currentPage} === '1' ? 'Emphasized' : 'Default' }"/>
+        <Button text="2" press="onNavToPage('2')" tooltip="JavaScript 활용 2" type="{= ${AppModel>/currentPage} === '2' ? 'Emphasized' : 'Default' }"/>
+        <Button text="3" press="onNavToPage('3')" tooltip="UI 제어" type="{= ${AppModel>/currentPage} === '3' ? 'Emphasized' : 'Default' }"/>
+        <Button text="4" press="onNavToPage('4')" tooltip="dataBinding" type="{= ${AppModel>/currentPage} === '4' ? 'Emphasized' : 'Default' }"/>
+    </HBox>
+    <App id="app">
+    </App>
+</mvc:View>

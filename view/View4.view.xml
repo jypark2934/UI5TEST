@@ -1,0 +1,53 @@
+<mvc:View controllerName="sap.sync.ui5test.controller.View4"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page id="page" title="Game Play">
+        <content>
+            <VBox>
+                <VBox class="sapUiTinyMargin">
+                    <Text text="홀짝 맞추기 랜덤게임!&#10;랜덤숫자의 범위를 입력하고 시작버튼을 클릭하세요!!"/>
+                </VBox>
+                <HBox>
+                    <VBox class="sapUiTinyMargin">
+                        <Label text="최소값" design="Bold"/>
+                        <Input id="inputMin" value="{view>/iMin}"/>
+                    </VBox>
+                    <VBox class="sapUiTinyMargin">
+                        <Label text="최대값" design="Bold"/>
+                        <Input id="inputMax" value="{view>/iMax}"/>
+                    </VBox>
+                    <VBox class="sapUiTinyMargin">
+                        <Label text="시간제한" design="Bold"/>
+                        <StepInput id="stepTime" value="{view>/iTimeout}" min="1" max="10" description="초 (1~10)" fieldWidth="25%"/>
+                    </VBox>
+                </HBox>
+                <HBox class="sapUiTinyMargin">
+                    <Button text="START!" type="Emphasized" press="onStartGame" enabled="{view>/bBeforeStart}"/>
+                </HBox>
+            </VBox>
+            <HBox busy="{view>/bBeforeStart}">
+                <VBox alignItems="Center" class="sapUiTinyMargin">
+                    <Label text="홀수" design="Bold"/>
+                    <Button id="buttonOdd" width="5rem" icon="sap-icon://question-mark" press="onPress($event, 'odd')"/>
+                </VBox>
+                <VBox alignItems="Center" class="sapUiTinyMargin">
+                    <Label text="짝수" design="Bold"/>
+                    <Button id="buttonEven" width="5rem" icon="sap-icon://question-mark" press="onPress($event, 'even')"/>
+                </VBox>
+                <VBox alignItems="Center" class="sapUiTinyMargin">
+                    <core:Icon src="sap-icon://accept" size="3rem" color="#2070FF"
+                        visible="{= !${view>/bBeforeStart} &amp;&amp; ${view>/bAnswered} &amp;&amp; ${view>/bCorrect}}"/>
+                    <core:Icon src="sap-icon://cancel" size="3rem" color="#F05050"
+                        visible="{= !${view>/bBeforeStart} &amp;&amp; ${view>/bAnswered} &amp;&amp; !${view>/bCorrect}}"/>
+                </VBox>
+            </HBox>
+            <HBox>
+                <VBox class="sapUiTinyMargin">
+                    <Label text="결과" design="Bold"/>
+                    <Text id="textResult" text="맞춘 횟수 / 틀린 횟수 / 승률 => ui.table로 출력"/>
+                </VBox>
+            </HBox>
+        </content>
+    </Page>
+</mvc:View>
